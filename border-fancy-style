@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+<style>
+.main {
+  --offset: 3px;
+  background: rgb(55, 21, 90);
+  border-radius: 50px;
+  height: 75px;
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.main input {
+  background: transparent;
+  color: white;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+.main::before {
+  content: "";
+  background: conic-gradient(transparent 270deg, white, transparent);
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  animation: rotate 2s linear infinite;
+}
+.main::after {
+  content: "";
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100%-2 * var(--offset));
+  width: calc(100%-2 * var(--offset));
+}
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+  </head>
+  <body class="bg-[#181028] flex justify-center items-center min-h-screen">
+    <div class="main">
+      <input type="text" placeholder="Enter your name" />
+    </div>
+  </body>
+</html>
